@@ -30,14 +30,6 @@ import CreateProject from "../pages/Projects/CreateProject";
 import TaskDetails from "../pages/Tasks/TaskDetails";
 import TaskList from "../pages/Tasks/TaskList";
 
-//Transactions
-import Transactions from "../pages/Crypto/Transactions";
-import BuySell from "../pages/Crypto/BuySell";
-import CryproOrder from "../pages/Crypto/CryptoOrder";
-import MyWallet from "../pages/Crypto/MyWallet";
-import ICOList from "../pages/Crypto/ICOList";
-import KYCVerification from "../pages/Crypto/KYCVerification";
-
 //Crm Pages
 import CrmCompanies from "../pages/Crm/CrmCompanies";
 import CrmContacts from "../pages/Crm/CrmContacts";
@@ -52,29 +44,6 @@ import InvoiceDetails from "../pages/Invoices/InvoiceDetails";
 // Support Tickets
 import ListView from "../pages/SupportTickets/ListView";
 import TicketsDetails from "../pages/SupportTickets/TicketsDetails";
-
-// //Ecommerce Pages
-import EcommerceProducts from "../pages/Ecommerce/EcommerceProducts/index";
-import EcommerceProductDetail from "../pages/Ecommerce/EcommerceProducts/EcommerceProductDetail";
-import EcommerceAddProduct from "../pages/Ecommerce/EcommerceProducts/EcommerceAddProduct";
-import EcommerceOrders from "../pages/Ecommerce/EcommerceOrders/index";
-import EcommerceOrderDetail from "../pages/Ecommerce/EcommerceOrders/EcommerceOrderDetail";
-import EcommerceCustomers from "../pages/Ecommerce/EcommerceCustomers/index";
-import EcommerceCart from "../pages/Ecommerce/EcommerceCart";
-import EcommerceCheckout from "../pages/Ecommerce/EcommerceCheckout";
-import EcommerceSellers from "../pages/Ecommerce/EcommerceSellers/index";
-import EcommerceSellerDetail from "../pages/Ecommerce/EcommerceSellers/EcommerceSellerDetail";
-
-// NFT Marketplace Pages
-import Marketplace from "../pages/NFTMarketplace/Marketplace";
-import Collections from "../pages/NFTMarketplace/Collections";
-import CreateNFT from "../pages/NFTMarketplace/CreateNFT";
-import Creators from "../pages/NFTMarketplace/Creators";
-import ExploreNow from "../pages/NFTMarketplace/ExploreNow";
-import ItemDetails from "../pages/NFTMarketplace/Itemdetails";
-import LiveAuction from "../pages/NFTMarketplace/LiveAuction";
-import Ranking from "../pages/NFTMarketplace/Ranking";
-import WalletConnect from "../pages/NFTMarketplace/WalletConnect";
 
 // Base Ui
 import UiAlerts from "../pages/BaseUi/UiAlerts/UiAlerts";
@@ -252,6 +221,7 @@ import Profile from "../pages/Profile/Profile";
 import SbuscriptionGraph from "../pages/subscriptiongraph/SbuscriptionGraph";
 
 const authProtectedRoutes = [
+  { path: "/dashboard", component: <DashboardEcommerce /> },
   { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
   { path: "/dashboard-crm", component: <DashboardCrm /> },
   { path: "/dashboard", component: <DashboardEcommerce /> },
@@ -261,17 +231,6 @@ const authProtectedRoutes = [
   { path: "/dashboard-nft", component: <DashboardNFT /> },
   { path: "/dashboard-job", component: <DashboardJob /> },
   { path: "/apps-calendar", component: <Calendar /> },
-  { path: "/apps-ecommerce-products", component: <EcommerceProducts /> },
-  { path: "/apps-ecommerce-product-details/:_id", component: <EcommerceProductDetail /> },
-  { path: "/apps-ecommerce-product-details", component: <EcommerceProductDetail /> },
-  { path: "/apps-ecommerce-add-product", component: <EcommerceAddProduct /> },
-  { path: "/apps-ecommerce-orders", component: <EcommerceOrders /> },
-  { path: "/apps-ecommerce-order-details", component: <EcommerceOrderDetail /> },
-  { path: "/apps-ecommerce-customers", component: <EcommerceCustomers /> },
-  { path: "/apps-ecommerce-cart", component: <EcommerceCart /> },
-  { path: "/apps-ecommerce-checkout", component: <EcommerceCheckout /> },
-  { path: "/apps-ecommerce-sellers", component: <EcommerceSellers /> },
-  { path: "/apps-ecommerce-seller-details", component: <EcommerceSellerDetail /> },
   { path: "/apps-file-manager", component: <FileManager /> },
   { path: "/apps-todo", component: <ToDoList /> },
 
@@ -285,8 +244,7 @@ const authProtectedRoutes = [
   { path: "/subscriptionplans", component: <SubscriptionPlans /> },
   // Dashboard->PaymentMethod
   { path: "/paymentMethod", component: <PaymentMethod /> },
-  // Dashboard->Home
-  { path: "/home", component: <Home /> },
+
   // Dashboard->Profile
   { path: "/profile", component: <Profile /> },
   // Dashboard->SubscriptionGraph
@@ -325,25 +283,6 @@ const authProtectedRoutes = [
   //Supports Tickets
   { path: "/apps-tickets-list", component: <ListView /> },
   { path: "/apps-tickets-details", component: <TicketsDetails /> },
-
-  //transactions
-  { path: "/apps-crypto-transactions", component: <Transactions /> },
-  { path: "/apps-crypto-buy-sell", component: <BuySell /> },
-  { path: "/apps-crypto-orders", component: <CryproOrder /> },
-  { path: "/apps-crypto-wallet", component: <MyWallet /> },
-  { path: "/apps-crypto-ico", component: <ICOList /> },
-  { path: "/apps-crypto-kyc", component: <KYCVerification /> },
-
-  // NFT Marketplace
-  { path: "/apps-nft-marketplace", component: <Marketplace /> },
-  { path: "/apps-nft-collections", component: <Collections /> },
-  { path: "/apps-nft-create", component: <CreateNFT /> },
-  { path: "/apps-nft-creators", component: <Creators /> },
-  { path: "/apps-nft-explore", component: <ExploreNow /> },
-  { path: "/apps-nft-item-details", component: <ItemDetails /> },
-  { path: "/apps-nft-auction", component: <LiveAuction /> },
-  { path: "/apps-nft-ranking", component: <Ranking /> },
-  { path: "/apps-nft-wallet", component: <WalletConnect /> },
 
   //charts
   { path: "/charts-apex-line", component: <LineCharts /> },

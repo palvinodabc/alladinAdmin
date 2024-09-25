@@ -1,15 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-//Dashboard
-import DashboardAnalytics from "../pages/DashboardAnalytics";
-import DashboardCrm from "../pages/DashboardCrm";
 import DashboardEcommerce from "../pages/DashboardEcommerce";
-
-import DashboardCrypto from "../pages/DashboardCrypto";
-import DashboardProject from "../pages/DashboardProject";
-import DashboardNFT from "../pages/DashboardNFT";
-import DashboardJob from "../pages/DashboardJob/";
 
 //Calendar
 // Email box
@@ -30,20 +22,10 @@ import CreateProject from "../pages/Projects/CreateProject";
 import TaskDetails from "../pages/Tasks/TaskDetails";
 import TaskList from "../pages/Tasks/TaskList";
 
-//Crm Pages
-import CrmCompanies from "../pages/Crm/CrmCompanies";
-import CrmContacts from "../pages/Crm/CrmContacts";
-import CrmDeals from "../pages/Crm/CrmDeals/index";
-import CrmLeads from "../pages/Crm/CrmLeads/index";
-
 //Invoices
 import InvoiceList from "../pages/Invoices/InvoiceList";
 import InvoiceCreate from "../pages/Invoices/InvoiceCreate";
 import InvoiceDetails from "../pages/Invoices/InvoiceDetails";
-
-// Support Tickets
-import ListView from "../pages/SupportTickets/ListView";
-import TicketsDetails from "../pages/SupportTickets/TicketsDetails";
 
 // Base Ui
 import UiAlerts from "../pages/BaseUi/UiAlerts/UiAlerts";
@@ -184,18 +166,6 @@ import PolarCharts from "../pages/Charts/ApexCharts/PolarCharts";
 import ChartsJs from "../pages/Charts/ChartsJs/index";
 import Echarts from "../pages/Charts/ECharts/index";
 
-//Job pages
-import Statistics from "../pages/Jobs/Statistics";
-import JobList from "../pages/Jobs/JobList/List";
-import JobGrid from "../pages/Jobs/JobList/Grid";
-import JobOverview from "../pages/Jobs/JobList/Overview";
-import CandidateList from "../pages/Jobs/CandidateList/ListView";
-import CandidateGrid from "../pages/Jobs/CandidateList/GridView";
-import NewJobs from "../pages/Jobs/NewJob";
-import JobCategories from "../pages/Jobs/JobCategories";
-import Application from "../pages/Jobs/Application";
-import CompaniesList from "../pages/Jobs/CompaniesList";
-
 // Landing Index
 import OnePage from "../pages/Landing/OnePage";
 import NFTLanding from "../pages/Landing/NFTLanding";
@@ -208,7 +178,6 @@ import JobLanding from "../pages/Job_Landing/Job";
 import UserProfile from "../pages/Authentication/user-profile";
 
 import FileManager from "../pages/FileManager";
-import ToDoList from "../pages/ToDo";
 import AllUserSubscriptions from "../pages/userManagement/AllUserSubscriptions";
 import AllUsers from "../pages/userManagement/AllUsers";
 import PremiumUsers from "../pages/userManagement/PremiumUsers";
@@ -222,17 +191,10 @@ import SbuscriptionGraph from "../pages/subscriptiongraph/SbuscriptionGraph";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <DashboardEcommerce /> },
-  { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
-  { path: "/dashboard-crm", component: <DashboardCrm /> },
   { path: "/dashboard", component: <DashboardEcommerce /> },
   { path: "/index", component: <DashboardEcommerce /> },
-  { path: "/dashboard-crypto", component: <DashboardCrypto /> },
-  { path: "/dashboard-projects", component: <DashboardProject /> },
-  { path: "/dashboard-nft", component: <DashboardNFT /> },
-  { path: "/dashboard-job", component: <DashboardJob /> },
   { path: "/apps-calendar", component: <Calendar /> },
   { path: "/apps-file-manager", component: <FileManager /> },
-  { path: "/apps-todo", component: <ToDoList /> },
 
   // Dashboard->User Management
   { path: "/allUserSubs", component: <AllUserSubscriptions /> },
@@ -269,20 +231,10 @@ const authProtectedRoutes = [
   //Api Key
   { path: "/apps-api-key", component: <APIKey /> },
 
-  //Crm
-  { path: "/apps-crm-contacts", component: <CrmContacts /> },
-  { path: "/apps-crm-companies", component: <CrmCompanies /> },
-  { path: "/apps-crm-deals", component: <CrmDeals /> },
-  { path: "/apps-crm-leads", component: <CrmLeads /> },
-
   //Invoices
   { path: "/apps-invoices-list", component: <InvoiceList /> },
   { path: "/apps-invoices-details", component: <InvoiceDetails /> },
   { path: "/apps-invoices-create", component: <InvoiceCreate /> },
-
-  //Supports Tickets
-  { path: "/apps-tickets-list", component: <ListView /> },
-  { path: "/apps-tickets-details", component: <TicketsDetails /> },
 
   //charts
   { path: "/charts-apex-line", component: <LineCharts /> },
@@ -388,21 +340,6 @@ const authProtectedRoutes = [
   { path: "/pages-pricing", component: <Pricing /> },
   { path: "/pages-sitemap", component: <SiteMap /> },
   { path: "/pages-search-results", component: <SearchResults /> },
-
-  //Job pages
-  { path: "/apps-job-statistics", component: <Statistics /> },
-  { path: "/apps-job-lists", component: <JobList /> },
-  { path: "/apps-job-grid-lists", component: <JobGrid /> },
-  { path: "/apps-job-details", component: <JobOverview /> },
-  { path: "/apps-job-candidate-lists", component: <CandidateList /> },
-  { path: "/apps-job-candidate-grid", component: <CandidateGrid /> },
-  { path: "/apps-job-application", component: <Application /> },
-  { path: "/apps-job-new", component: <NewJobs /> },
-  { path: "/apps-job-companies-lists", component: <CompaniesList /> },
-  { path: "/apps-job-categories", component: <JobCategories /> },
-
-  { path: "/pages-privacy-policy", component: <PrivecyPolicy /> },
-  { path: "/pages-terms-condition", component: <TermsCondition /> },
 
   //User Profile
   { path: "/profile", component: <UserProfile /> },

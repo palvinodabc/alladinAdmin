@@ -20,12 +20,10 @@ export * from "./projects/thunk";
 // Tasks
 export * from "./tasks/thunk";
 //Crypto
-export * from "./crypto/thunk";
+// export * from "./crypto/thunk";
 
-//TicketsList
-export * from "./tickets/thunk";
 //Crm
-export * from "./crm/thunk";
+// export * from "./crm/thunk";
 
 //Invoice
 export * from "./invoice/thunk";
@@ -34,16 +32,16 @@ export * from "./invoice/thunk";
 export * from "./mailbox/thunk";
 
 // Dashboard Analytics
-export * from "./dashboardAnalytics/thunk";
+// export * from "./dashboardAnalytics/thunk";
 
 // Dashboard CRM
-export * from "./dashboardCRM/thunk";
+// export * from "./dashboardCRM/thunk";
 
 // Dashboard Ecommerce
 export * from "./dashboardEcommerce/thunk";
 
 // Dashboard Cryto
-export * from "./dashboardCrypto/thunk";
+// export * from "./dashboardCrypto/thunk";
 
 // Dashboard Cryto
 export * from "./dashboardProject/thunk";
@@ -56,9 +54,6 @@ export * from "./team/thunk";
 
 // File Manager
 export * from "./fileManager/thunk";
-
-// To do
-export * from "./todos/thunk";
 
 // Jobs
 export * from "./jobs/thunk";

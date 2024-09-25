@@ -23,7 +23,6 @@ import BreadCrumb from "../../Components/Common/BreadCrumb";
 import Widgets from "./Widgets";
 import TableContainer from "../../Components/Common/TableContainer";
 import { APIKeys, CreatedBy, ExpiryDate, Name, Status } from "./APIKeyCol";
-import { CreateDate } from "../SupportTickets/ListView/TicketCol";
 import { useDispatch, useSelector } from "react-redux";
 import { getAPIKey } from "../../slices/thunks";
 
@@ -48,7 +47,6 @@ const APIKey = () => {
   useEffect(() => {
     dispatch(getAPIKey());
   }, [dispatch]);
-
 
   const hadleApiClick = useCallback((arg) => {
     const application = arg;
@@ -85,22 +83,9 @@ const APIKey = () => {
   const columns = useMemo(
     () => [
       {
-        Header: (
-          <Input
-            type="checkbox"
-            id="checkBoxAll"
-            className="form-check-input"
-            onClick={() => checkedAll()}
-          />
-        ),
+        Header: <Input type="checkbox" id="checkBoxAll" className="form-check-input" onClick={() => checkedAll()} />,
         Cell: (cellProps) => {
-          return (
-            <Input
-              type="checkbox"
-              className="orderCheckBox form-check-input"
-              value={cellProps.row.original._id}
-            />
-          );
+          return <Input type="checkbox" className="orderCheckBox form-check-input" value={cellProps.row.original._id} />;
         },
         id: "#",
       },
@@ -171,20 +156,12 @@ const APIKey = () => {
               </DropdownToggle>
               <DropdownMenu className="dropdown-menu dropdown-menu-end">
                 <li>
-                  <DropdownItem
-                    className="edit-item-btn"
-                    to="#api-key-modal"
-                    data-bs-toggle="modal"
-                  >
+                  <DropdownItem className="edit-item-btn" to="#api-key-modal" data-bs-toggle="modal">
                     Rename
                   </DropdownItem>
                 </li>
                 <li>
-                  <DropdownItem
-                    className="regenerate-api-btn"
-                    to="#api-key-modal"
-                    data-bs-toggle="modal"
-                  >
+                  <DropdownItem className="regenerate-api-btn" to="#api-key-modal" data-bs-toggle="modal">
                     Regenerate Key
                   </DropdownItem>
                 </li>
@@ -216,10 +193,7 @@ const APIKey = () => {
   return (
     <React.Fragment>
       <div className="page-content">
-        <DeleteModal
-          show={deleteModal}
-          onCloseClick={() => setDeleteModal(false)}
-        />
+        <DeleteModal show={deleteModal} onCloseClick={() => setDeleteModal(false)} />
         <DeleteModal
           show={deleteModalMulti}
           onDeleteClick={() => {
@@ -248,8 +222,7 @@ const APIKey = () => {
                       onClick={handleShow}
                       data-bs-target="#api-key-modal"
                     >
-                      <i className="ri-add-line align-bottom me-1"></i> Add API
-                      Key
+                      <i className="ri-add-line align-bottom me-1"></i> Add API Key
                     </Button>
                   </div>
                 </CardHeader>
@@ -272,67 +245,34 @@ const APIKey = () => {
         </Container>
       </div>
 
-      <div
-        className="modal fade"
-        id="api-key-modal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
+      <div className="modal fade" id="api-key-modal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <Modal isOpen={show} toggle={handleClose} className="modal-content">
             <ModalHeader className="modal-header">Create API Key</ModalHeader>
             <ModalBody className="modal-body">
               <form autoComplete="off">
-                <div
-                  id="api-key-error-msg"
-                  className="alert alert-danger py-2 d-none"
-                ></div>
+                <div id="api-key-error-msg" className="alert alert-danger py-2 d-none"></div>
                 <Input type="hidden" id="apikeyId" />
                 <div className="mb-3">
                   <Label htmlFor="api-key-name" className="form-label">
                     API Key Name <span className="text-danger">*</span>
                   </Label>
-                  <Input
-                    type="text"
-                    className="form-control"
-                    id="api-key-name"
-                    placeholder="Enter api key name"
-                  />
+                  <Input type="text" className="form-control" id="api-key-name" placeholder="Enter api key name" />
                 </div>
-                <div
-                  className="mb-3"
-                  id="apikey-element"
-                  style={{ display: "none" }}
-                >
+                <div className="mb-3" id="apikey-element" style={{ display: "none" }}>
                   <Label htmlFor="api-key" className="form-label">
                     API Key
                   </Label>
-                  <Input
-                    type="text"
-                    className="form-control"
-                    id="api-key"
-                    disabled
-                    value="b5815DE8A7224438932eb296Z5"
-                  />
+                  <Input type="text" className="form-control" id="api-key" disabled value="b5815DE8A7224438932eb296Z5" />
                 </div>
               </form>
             </ModalBody>
             <div className="modal-footer">
               <div className="hstack gap-2 justify-content-end">
-                <Button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                  onClick={handleClose}
-                >
+                <Button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>
                   Close
                 </Button>
-                <Button
-                  type="button"
-                  color="primary"
-                  id="createApi-btn"
-                >
+                <Button type="button" color="primary" id="createApi-btn">
                   Create API
                 </Button>
               </div>
